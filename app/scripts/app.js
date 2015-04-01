@@ -23,7 +23,7 @@ angular
   .config(function ($routeProvider,localStorageServiceProvider) {
   	localStorageServiceProvider.setPrefix('adf');
     $routeProvider
-      .when('/home', {
+      .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       });

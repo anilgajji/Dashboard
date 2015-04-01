@@ -189,7 +189,7 @@ angular.module('adf')
         }, true);
 
         // edit mode
-        $scope.editMode = false;
+        $scope.editMode = true;
         $scope.editClass = "";
 
         $scope.toggleEditMode = function(){

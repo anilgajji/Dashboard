@@ -14,26 +14,51 @@ angular.module('sampleDemoApp', ['adf', 'LocalStorageModule'])
   if (!model) {
     // set default model for demo purposes
     model = {
-      title: "Sample 01",
-      structure: "2-10",
+      title: "",
+      structure: "6-6",
       rows: [{
         columns: [{
-          styleClass: "col-md-2",
-          widgets: [{
-            title: 'Description',
-            type: 'markdown',
-            config: {
-              content: 'This sample uses a widget filter, to restrict the widget selection on the "add dialog".'
-            }
-          }]
-        }, {
-          styleClass: "col-md-10",
+          styleClass: "col-md-6",
           widgets: [{
             type: "markdown",
             config: {
-              content: "![Adtran logo](/images/AdtranLogo.png)\n\n ![AOE logo](/images/AOELogo.png)\n\n Welcome to sample dashboard appliction of AOE"
+              content: "No Alarms Found"
             },
-            title: "Markdown"
+            title: "Alarms"
+          }, {
+            type: "markdown",
+            config: {
+              content: "No Tasks Scheduled"
+            },
+            title: "Recently Scheduled Tasks"
+          },{
+            type: "markdown",
+            config: {
+              content: "No Alerts Found"
+            },
+            title: "Capacity Monitor Alerts"
+          }, {
+            type: "markdown",
+            config: {
+              content: "No Alerts Found"
+            },
+            title: "Service Monitor Alerts"
+          }]
+        }, {
+          styleClass: "col-md-6",
+          widgets: [{
+            type: "markdown",
+            config: {
+              content: "No Alarms Found"
+            },
+            title: "Historical Alarms"
+          },{
+            type: "markdown",
+            config: {
+              content: "No updates"
+            },
+            reload:true,
+            title: "Dynamic updates"
           }]
         }]
       }]
@@ -42,6 +67,7 @@ angular.module('sampleDemoApp', ['adf', 'LocalStorageModule'])
   $scope.name = name;
   $scope.model = model;
   $scope.collapsible = false;
+  $scope.editMode = true;
 
   $scope.$on('adfDashboardChanged', function (event, name, model) {
     localStorageService.set(name, model);

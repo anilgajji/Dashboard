@@ -159,6 +159,7 @@ angular.module('adf')
 
         // Watching for changes on adfModel
         $scope.$watch('adfModel', function(oldVal, newVal) {
+        	debugger;
           // has model changed or is the model attribute not set
           if (newVal !== null || (oldVal === null && newVal === null)) {
             model = $scope.adfModel;
@@ -179,9 +180,9 @@ angular.module('adf')
             }
 
             if (model) {
-              if (!model.title){
-                model.title = 'Dashboard';
-              }
+              // if (!model.title){
+                // model.title = 'Dashboard';
+              // }
               $scope.model = model;
             } else {
               $log.error('could not find or create model');
@@ -190,7 +191,7 @@ angular.module('adf')
         }, true);
 
         // edit mode
-        $scope.editMode = false;
+        $scope.editMode = model.editMode;
         $scope.editClass = "";
 
         $scope.toggleEditMode = function(){
