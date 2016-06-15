@@ -25,6 +25,12 @@ angular.module('sampleDemoApp', ['adf', 'LocalStorageModule'])
               content: "No Alarms Found"
             },
             title: "Alarms"
+          },{
+            type: "markdown",
+            config: {
+              content: "No Content to display"
+            },
+            title: "TextArea"
           }, {
             type: "markdown",
             config: {
