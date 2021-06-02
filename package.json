@@ -30,12 +30,19 @@
     "karma-jasmine": "^0.3.5",
     "karma-phantomjs-launcher": "^0.1.4",
     "load-grunt-tasks": "^0.4.0",
+    "release-it": "^14.7.0",
     "time-grunt": "^0.3.1"
   },
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "release": "release-it --no-npm"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    }
   }
 }
